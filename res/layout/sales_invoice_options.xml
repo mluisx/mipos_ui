@@ -1,0 +1,42 @@
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sales_invoice_options_checkout_response"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <CheckedTextView
+            android:id="@+id/checkedTextView1"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/sales_invoice_options_send_invoice_by_mail" />
+
+        <CheckedTextView
+            android:id="@+id/checkedTextView2"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/sales_invoice_options_print_invoice" />
+
+        <CheckedTextView
+            android:id="@+id/checkedTextView3"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/sales_invoice_options_print_change_ticket" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sales_invoice_options_finish_sale_process" />
+
+    </LinearLayout>

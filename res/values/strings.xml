@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">testLoginAndroid</string>    <string name="hello_world">Hola Mundo!</string>    <string name="menu_settings">Settings</string>    <string name="title_activity_main">Login Page</string>    <string name="login">Ingresar</string>    <string name="title_item_detail">Item Detail</string>    <string name="title_item_list">Items</string>    <string name="title_activity_menu_inicial">MenuInicial</string>    <string name="agregar_ventas">Agregar ventas</string>    <string name="view_sale_items">Visualizar ventas</string>    <string name="clientes">Clientes</string>    <string name="stock">Stock</string>    <string name="opciones">Opciones</string>    <string name="date">La fecha del día</string>    <string name="cash_open">Abrir caja</string>    <string name="change">Ingresar cambio del día</string>    <string name="cash_close">Cerrar caja</string>	<!-- clients_activities -->			  	<string name="clients_add_client_name_and_last_name">Nombre y Apellido</string>	<string name="clients_add_client_mail">E-Mail</string>	<string name="clients_add_client_cuit_number">C.U.I.T.</string>	<string name="clients_add_client_address">Dirección</string>	<string name="clients_add_client_phone">Número de Teléfono</string>	<string name="clients_add_client_extra_info">Información Extra</string>	<string name="clients_add_new_client">Agregar Cliente</string>		<string name="clients_add_client_picture">Sacar Foto</string>		<string name="clients_list_add_client">Agregar Nuevo Cliente</string>	  	<string name="clients_list_title">Lista de Clientes</string>		<string name="clients_history_title">Historial Cliente Número X</string>	<string name="clients_history_remove_client">Eliminar Cliente</string>		<string name="clients_extra_history_title">Datos Item X Cliente Y</string>	<string name="clients_extra_history_date_and_time">Fecha</string>	<string name="clients_extra_history_sale_number">Venta</string>	<string name="clients_extra_history_sale_description">Descripción de la Venta</string>	<string name="clients_extra_history_sale_total_price">Precio Final</string>	<string name="clients_extra_history_seller">Vendedor</string>	<string name="clients_extra_history_back">Volver al Historial</string>	<string name="clients_history_back">Volver al Listado de Clientes</string>
+	
+    <!-- sales_activities -->
+    <string name="product_code">Código</string>
+	<string name="price">Precio</string>
+	<string name="product_description">Descripción del Producto</string>
+	<string name="add">Agregar</string>
+	<string name="cart">Carrito</string>
+	<string name="sales_add_new_sale_product_price">Precio $0</string>
+	<string name="final_price">Precio Final</string>
+	<string name="to_second_purchase_step">Siguiente Paso - Pago</string>
+	<string name="add_new_sale_title">Agregar Venta</string>
+	<string name="sales_payments_title">Pago</string>
+	<string name="sales_add_new_sale_quantity_more">+1</string>
+	<string name="sales_add_new_sale_quantity_less">-1</string>
+	<string name="sales_add_new_sale_product_quantity">Cantidad: 0</string>
+	
+	<string name="sales_credit_card_checkout_title">Datos Tarjeta de Crédito</string>
+	<string name="sales_credit_card_number">Número de Tarjeta</string>
+	<string name="sales_credit_card_holder_name">Nombre y Apellido</string>
+	<string name="sales_credit_card_expiracy_date">Fecha de Vencimiento</string>
+	<string name="sales_credit_card_security_code">Código de Seguridad</string>
+	<string name="sales_begin_credit_card_checkout_process">Iniciar Transacción</string>
+	
+	<string name="sales_invoice_options_checkout_response">Transacción Aprobada/No</string>
+	<string name="sales_invoice_options_send_invoice_by_mail">Enviar Factura Por Mail</string>
+    <string name="sales_invoice_options_print_invoice">Imprimir Ticket Factura</string>
+    <string name="sales_invoice_options_print_change_ticket">Imprimir Cupón de Cambio</string>
+    <string name="sales_invoice_options_finish_sale_process">Finalizar Proceso de Compra</string>
+	
+    <string name="sales_summary_sale_number">Venta Numero 1</string>
+    <string name="sales_summary_client_name">Nombre del Cliente</string>
+    <string name="sales_summary_invoice_number">Numero de Factura</string>
+    <string name="sales_summary_add_another_sale">Agregar Otra Venta</string>
+	<string name="sales_summary_go_to_main_menu">Ir al Menú Principal</string>
+	
+	<!-- cash_view_activities -->	
+	<string name="cash_view_current_cash">Caja Actual</string>
+	<string name="cash_view_items_title">Listado de Ventas</string>
+    <string name="cash_view_items_sale_number">Número de Venta</string>
+    <string name="cash_view_items_total_amount">Total</string>
+    
+    <!-- cash_close_activities -->
+    <string name="cash_close_title">Cierre de Caja</string>
+    <string name="cash_close_total">Total de Caja del Día Facturado</string>
+    <string name="cash_close_currency_amount">Total en Efectivo</string>
+    <string name="cash_close_credit_card_amount">Total en Tarjeta</string>
+    <string name="cash_close_other_payment_methods_amount">Total en Otros Pagos</string>
+    <string name="cash_close_amounts_total">Total</string>
+    <string name="cash_close_action">Cerrar Caja</string>
+    
+    <!-- options_activity -->   
+    <string name="options_title">Opciones de Configuración</string>
+    <string name="options_protocol">Protocolo</string>
+    <string name="options_url">URL del Servidor</string>
+    <string name="options_port">Puerto</string>
+    <string name="options_save">Grabar Cambios</string>
+    <string name="options_bluetooth_connection_device">Dispositivo Conectado por Bluetooth</string>
+    <string name="options_bluetooth_connection_device_button">Conectar con Dispositivo</string>
+	<string name="options_bluetooth_text_to_send">Texto a Enviar</string>
+	<string name="options_bluetooth_text_to_send_button">Enviar Texto</string>
+	<string name="options_bluetooth_text_received">Texto de Respuesta</string>   
+    <string name="options_hint">Texto</string>
+    
+    <!-- stock_activity -->   
+    <string name="stock_title">Administración de Stock</string>
+    <string name="stock_read_product_qrcode">Leer Código QR</string>
+    <string name="stock_read_product_barcode">Leer Código de Barras</string>
+    <string name="stock_product_code">Código</string>
+    <string name="stock_product_description">Descripción</string>
+    <string name="stock_product_price">Precio</string>
+    <string name="stock_product_quantity">Cantidad</string>
+    <string name="stock_product_picture_action">Sacar Foto</string>
+    <string name="stock_product_add_to_database">Ingresar Datos</string>
+    <string name="stock_product_categories">Categoría del Producto</string>
+    <string name="stock_product_picture_imageView_text">Foto del Producto</string>
+    <string name="stock_product_generate_qrcode">Generar Código QR</string>
+    
+    <!-- stock_qr_generator_activity -->   
+    <string name="stock_qr_generator_product_code">Código QR del Producto X</string>
+    <string name="stock_qr_generator_print_button">Imprimir Código QR</string>
+    <string name="stock_qr_generator_exit_button">Finalizar</string>
+    <string name="stock_qr_generator_imageView_text">Código QR</string>
+    
+    <!-- sales_payments_activity -->  
+    <string name="sale_payments_add_client">Agregar Cliente</string>
+    <string name="sale_payments_way_of_payment">Forma de Pago</string>
+    <string name="sale_payments_amount_paid">Monto Pagado</string>
+    <string name="sale_payments_amount_paid_hint">$0.00</string>
+    <string name="sale_payments_add_way_of_payment">Agregar Pago</string>
+    <string name="sale_payments_next_step">Pasar al Próximo Paso</string>
+    <string name="sale_payments_client_name">Cliente: Final</string>
+    <string name="sale_payments_total_amount">Total de Venta $0.00</string>
+        
+</resources>

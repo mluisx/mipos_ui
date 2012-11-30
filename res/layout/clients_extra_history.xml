@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/clients_extra_history_textView_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:ems="10"
+        android:layout_weight="0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/clients_extra_history_title" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <TableRow
+            android:id="@+id/clients_extra_history_tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/clients_extra_history_textView_date_and_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clients_extra_history_date_and_time" />
+                
+                
+                <TextView
+                    android:id="@+id/clients_extra_history_textView_sale_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clients_extra_history_sale_number" />
+                
+                
+                <TextView
+                    android:id="@+id/clients_extra_history_textView_sale_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clients_extra_history_sale_description" />
+                
+                
+                <TextView
+                    android:id="@+id/clients_extra_history_textView_sale_total_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clients_extra_history_sale_total_price" />
+                
+                <TextView
+                    android:id="@+id/clients_extra_history_textView_seller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clients_extra_history_seller" />
+           
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/clients_extra_history_tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0" >
+        </TableRow>
+        
+        <Button
+        	android:id="@+id/clients_extra_history_back_button"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_weight="0"
+        	android:text="@string/clients_extra_history_back" />
+
+    </TableLayout>
+
+</LinearLayout>

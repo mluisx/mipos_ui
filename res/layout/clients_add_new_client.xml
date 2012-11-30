@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/clients_add_editText_client_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/clients_add_client_name_and_last_name" >
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/clients_add_editText_client_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="@string/clients_add_client_mail" />
+
+    <EditText
+        android:id="@+id/clients_add_editText_client_cuit_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/clients_add_client_cuit_number" />
+
+    <EditText
+        android:id="@+id/clients_add_editText_client_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:hint="@string/clients_add_client_address" />
+
+    <EditText
+        android:id="@+id/clients_add_editText_client_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="@string/clients_add_client_phone" />
+
+    <EditText
+        android:id="@+id/clients_add_editText_client_extra_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="@string/clients_add_client_extra_info" />
+
+    <Button
+        android:id="@+id/clients_add_button_add_client_picture"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/clients_add_client_picture" />
+
+    <Button
+        android:id="@+id/clients_add_button_add_client"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:text="@string/clients_add_new_client" />
+
+</LinearLayout>

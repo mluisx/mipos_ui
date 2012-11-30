@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/sale_payments_total_amount_textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/sale_payments_total_amount" />
+
+    <TextView
+        android:id="@+id/sale_payments_client_name_textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/sale_payments_client_name" />
+
+    <Button
+        android:id="@+id/sale_payments_button_add_client"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sale_payments_add_client" />
+
+    <TextView
+        android:id="@+id/sale_payments_way_of_payment_textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/sale_payments_way_of_payment" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="singleChoice"
+        android:layout_weight="0.3"
+        android:gravity="center" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/sale_payments_amount_paid_textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/sale_payments_amount_paid" />
+
+    <ListView
+        android:id="@+id/sale_payments_listView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:gravity="center" >
+    </ListView>
+
+    <EditText
+        android:id="@+id/sale_payments_amount_paid_editText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/sale_payments_amount_paid_hint"
+        android:inputType="numberDecimal" >
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/sale_payments_add_way_of_payment_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sale_payments_add_way_of_payment" />
+
+    <ListView
+        android:id="@+id/sale_payments_listView3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:gravity="center" >
+    </ListView>
+
+    <Button
+        android:id="@+id/sale_payments_next_step_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/sale_payments_next_step" />
+
+</LinearLayout>

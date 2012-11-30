@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <EditText
+      android:id="@+id/sale_add_new_sale_product_code_editText"
+      android:layout_height="wrap_content"
+      android:layout_width="fill_parent"
+      android:ems="12"
+      android:gravity="center"
+      android:hint="@string/product_code"
+      android:layout_weight="0" >
+      <requestFocus
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+    </EditText>
+    
+    <TextView
+        android:id="@+id/sale_add_new_sale_product_description_textView"
+   		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:ems="10"
+        android:layout_weight="0" 
+        android:gravity="center"
+        android:textSize="20sp"
+        android:hint="@string/product_description" >
+    </TextView>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_weight="0" >
+        
+    	<Button
+    	    android:id="@+id/sales_add_new_sale_button_price"
+    	    android:layout_width="90dp"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignParentRight="true"
+    	    android:layout_gravity="right"
+    	    android:text="@string/price" />
+
+    	<TextView
+    	    android:id="@+id/sales_add_new_sale_product_price_textView"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignParentLeft="true"
+    	    android:layout_centerVertical="true"
+    	    android:layout_toLeftOf="@+id/sales_add_new_sale_button_price"
+    	    android:ems="7"
+    	    android:gravity="center"
+    	    android:hint="@string/sales_add_new_sale_product_price"
+    	    android:textSize="25sp" />
+    	
+    </RelativeLayout>	
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
+    
+        <TextView
+            android:id="@+id/sales_add_new_sale_product_quantity_textView"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/sales_add_new_sale_button_quantity_more"
+            android:ems="7"
+            android:gravity="center"
+            android:hint="@string/sales_add_new_sale_product_quantity"
+            android:textSize="25sp" />
+        
+        <Button
+            android:id="@+id/sales_add_new_sale_button_quantity_less"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/sales_add_new_sale_quantity_less" />
+        
+        <Button
+            android:id="@+id/sales_add_new_sale_button_quantity_more"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/sales_add_new_sale_button_quantity_less"
+            android:text="@string/sales_add_new_sale_quantity_more" />
+
+    </RelativeLayout>
+    
+    <Button
+        android:id="@+id/sales_add_new_sale_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/add"
+    	android:layout_weight="0.5"  />
+   <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="115dp"
+        android:layout_weight="0.42" >
+
+    </ListView>
+         
+    <TextView
+        android:id="@+id/sales_add_new_sale_textView_final_price"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:ems="10"
+	 	android:layout_weight="0.5" 
+        android:gravity="center"
+        android:text="@string/final_price"
+        android:textSize="35sp" >
+    </TextView> 
+    
+    <Button
+        android:id="@+id/sales_add_new_sale_button_next_purchase_step"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_gravity="fill_horizontal"
+        android:gravity="center"
+        android:layout_weight="0"
+        android:text="@string/to_second_purchase_step" />         
+ 
+</LinearLayout>

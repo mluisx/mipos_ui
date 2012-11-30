@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/stock_read_product_qrcode_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stock_read_product_qrcode"
+        android:layout_weight="0" />
+    
+    <Button
+        android:id="@+id/stock_read_product_barcode_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stock_read_product_barcode"
+        android:layout_weight="0" />
+
+    <EditText
+        android:id="@+id/stock_product_code_editText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_weight="0"
+        android:hint="@string/stock_product_code" >
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/stock_product_description_editText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/stock_product_description"
+        android:layout_weight="0" />
+
+    <EditText
+        android:id="@+id/stock_product_price_editText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_weight="0"
+        android:hint="@string/stock_product_price" />
+
+    <EditText
+        android:id="@+id/stock_product_quantity_editText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_weight="0"
+        android:hint="@string/stock_product_quantity" />
+
+    <TextView
+        android:id="@+id/stock_product_categories_textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:text="@string/stock_product_categories"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+    </ListView>
+
+    <Button
+        android:id="@+id/stock_product_picture_action_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/stock_product_picture_action" />
+
+    <ImageView
+        android:id="@+id/stock_product_picture_imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:contentDescription="@string/stock_product_picture_imageView_text"
+        android:src="@drawable/ic_launcher" >
+
+    </ImageView>
+
+    <CheckBox
+        android:id="@+id/stock_product_generate_qrcode_checkBox"
+        android:layout_width="fill_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/stock_product_generate_qrcode" />
+    
+    <Button
+        android:id="@+id/stock_product_add_to_database_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/stock_product_add_to_database" />
+
+</LinearLayout>

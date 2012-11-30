@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:layout_weight="0.41"
+    android:id="@+id/linearLayoutCashNew" >
+
+    <TextView
+         android:id="@+id/cash_open_textView"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/date"
+         android:gravity="center"
+         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+     <EditText
+         android:id="@+id/cash_open_editText"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:ems="10"
+         android:inputType="numberDecimal"
+         android:gravity="center"
+         android:hint="@string/change" >
+
+         <requestFocus />
+     </EditText>
+
+     <Button
+         android:id="@+id/cash_open_button"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/cash_open" />
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/main_menu_cash_open"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:text="@string/cash_open" />
+
+    <Button
+        android:id="@+id/main_menu_add_sale"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:text="@string/agregar_ventas" />
+
+    <Button
+        android:id="@+id/main_menu_clients"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:text="@string/clientes" />
+
+    <Button
+        android:id="@+id/main_menu_view_sale_items"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:text="@string/view_sale_items" />
+
+    <Button
+        android:id="@+id/main_menu_options"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:text="@string/opciones" />
+
+    <Button
+        android:id="@+id/main_menu_stock"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:text="@string/stock" />
+    
+    <Button
+        android:id="@+id/main_menu_cash_close"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:text="@string/cash_close" />
+
+</LinearLayout>

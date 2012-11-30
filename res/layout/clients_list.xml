@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/clients_list_textView_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:ems="10"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/clients_list_title" />
+
+    <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="false" >	               
+    </ListView>
+    <Button
+        android:id="@+id/clients_list_button_add_client"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/clients_list_add_client" />
+
+</LinearLayout>

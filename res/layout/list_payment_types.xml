@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+	<CheckedTextView 
+        android:id="@+id/sales_payments_checkedTextView_way_of_payment_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+		android:textSize="20sp"
+		android:hint="@string/cart"
+		android:checkMark="@android:drawable/checkbox_off_background"
+		android:onClick="toggle" />
+</LinearLayout>

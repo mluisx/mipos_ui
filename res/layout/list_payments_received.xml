@@ -1,0 +1,10 @@
+    <CheckedTextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/sales_payments_payment_received_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+		android:textSize="20sp"
+		android:hint="@string/cart"
+		android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+		android:onClick="toggle" />
