@@ -1,8 +1,11 @@
 package com.mipos.pojos;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class ProductForSale {
+public class ProductForSale implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	String code;
 	BigDecimal price;
 	int quantity;

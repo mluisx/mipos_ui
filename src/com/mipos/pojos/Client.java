@@ -1,9 +1,11 @@
 package com.mipos.pojos;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Client {
+public class Client implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	int id;
 	String name;
 	BigDecimal balance;

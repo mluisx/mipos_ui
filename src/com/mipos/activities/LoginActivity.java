@@ -37,11 +37,12 @@ public class LoginActivity extends Activity {
         loginButton.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
-				progressBar.setVisibility(View.VISIBLE);
-				LogInAsync logInAsync = new LogInAsync(activity);
-				logInAsync.setUser(userText.getText().toString());
-				logInAsync.setPass(passText.getText().toString());
-				logInAsync.execute();				
+//				progressBar.setVisibility(View.VISIBLE);
+//				LogInAsync logInAsync = new LogInAsync(activity);
+//				logInAsync.setUser(userText.getText().toString());
+//				logInAsync.setPass(passText.getText().toString());
+//				logInAsync.execute();
+				openMainMenu();
 			}
 			
 //			private String getKeywords(HttpHost target) {

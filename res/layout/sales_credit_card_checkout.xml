@@ -4,7 +4,7 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/sales_credit_card_checkout_textView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
@@ -13,7 +13,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/sales_credit_card_checkout_card_number_editText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
@@ -23,25 +23,25 @@
     </EditText>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/sales_credit_card_checkout_holders_name_editText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="@string/sales_credit_card_holder_name" />
+        android:hint="@string/sales_credit_card_holders_name" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/sales_credit_card_checkout_expiration_date_editText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="@string/sales_credit_card_expiracy_date" />
+        android:hint="@string/sales_credit_card_expiration_date" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/sales_credit_card_checkout_cvc_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
@@ -50,7 +50,7 @@
         android:hint="@string/sales_credit_card_security_code" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/sales_begin_credit_card_checkout_process_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

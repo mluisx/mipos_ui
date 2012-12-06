@@ -3,7 +3,7 @@ package com.mipos.utils;
 public class ConfigHelper {
 	
 	public static String SERVER_PROTOCOL = "http";
-	public static String SERVER_URL = "192.168.1.123";
+	public static String SERVER_URL = "192.168.0.102";
 	public static String SERVER_PORT = "8080";
 	public static String URL1 = "/jerseyFirstv2/rest/hello?";
 	public static String URL2 = "/jerseyFirstv2/rest/hello/post";

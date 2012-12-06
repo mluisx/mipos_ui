@@ -2,10 +2,14 @@ package com.mipos.activities;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.mipos.adapters.CartItemsAdapter;
 import com.mipos.adapters.PaymentItemsAdapter;
 import com.mipos.adapters.PaymentsReceivedAdapter;
+import com.mipos.pojos.Client;
+import com.mipos.pojos.PaymentMethod;
+import com.mipos.pojos.Sale;
 import com.mipos.utils.TransferBigDecimalObject;
 
 import android.app.Activity;
@@ -29,9 +33,15 @@ public class SalesPaymentsActivity extends ListActivity {
 	Button paymentButton, nextStep, addClient;
 	EditText amountPaidEdit;
 	TextView amountPaidText, clientName, totalAmountText, wayOfPaymentText;
-	BigDecimal totalAmount;
 	PaymentItemsAdapter adapter;
 	PaymentsReceivedAdapter paymentsReceivedAdapter;
+	ListView listViewPaymentsReceived, listViewWayOfPayments;
+	ArrayList<PaymentMethod> paymentMethodList = new ArrayList<PaymentMethod>();
+	Activity activity;
+    final String[] GENRES = new String[] { "Efectivo", "Tarjeta de Crédito", "Dispositivo NFC",
+    		"Paypal", "MercadoPago" };
+    Bundle extras;
+    Client clientSelected = null;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -46,14 +56,15 @@ public class SalesPaymentsActivity extends ListActivity {
 		clientName = (TextView) findViewById(R.id.sale_payments_client_name_textView);
 		totalAmountText = (TextView) findViewById(R.id.sale_payments_total_amount_textView);
 		wayOfPaymentText = (TextView) findViewById(R.id.sale_payments_way_of_payment_textView);
-        final ListView listViewWayOfPayments = getListView();
-      //final ListView listViewPaymentsReceived = getListView();
-		
-		Bundle extras = getIntent().getExtras();
+		listViewWayOfPayments = getListView();
+        listViewPaymentsReceived = (ListView) findViewById(R.id.sale_payments_received_payment_listView);
+        activity = this;
+        
+		extras = getIntent().getExtras();
 		
 		if (extras != null) {
-			totalAmount = ((TransferBigDecimalObject) extras.getSerializable("TotalAmount")).getNumber();
-			totalAmountText.setText("Total de Venta $" + totalAmount.toString());
+			totalAmountText.setText("Total de Venta $" + ((Sale) extras.getSerializable("SaleData")).
+					getTotalCartAmount().toString());
 		}
 	
 		paymentButton.setOnClickListener(new OnClickListener() {
@@ -75,26 +86,15 @@ public class SalesPaymentsActivity extends ListActivity {
 		nextStep.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
-				openCreditCardCheckoutActivity();
+				openNextActivity();
 			}
 
 		});
-		
-	       ArrayList<String> list1 = new ArrayList<String>();
-	       list1.add("Efectivo");
-	       list1.add("Tarjeta de Crédito");
-	       list1.add("Dispositivo NFC");
-	       list1.add("Paypal");
-	       list1.add("MercadoPago");
-
-	       final String[] GENRES = new String[] {
-		    	   "Efectivo", "Tarjeta de Crédito", "Dispositivo NFC", "Paypal", "MercadoPago"
-		       };
 		              
 	       listViewWayOfPayments.setItemsCanFocus(false);
 	       listViewWayOfPayments.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-	       adapter = new PaymentItemsAdapter(this, list1, this);
+//	       adapter = new PaymentItemsAdapter(this, list1, this);
 	       listViewWayOfPayments.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 //	       listViewWayOfPayments.setAdapter(adapter);
 	       listViewWayOfPayments.setAdapter(new ArrayAdapter<String>(this,
@@ -113,22 +113,31 @@ public class SalesPaymentsActivity extends ListActivity {
 
 	 	   });
 	       
-	  //     paymentsReceivedAdapter = new PaymentsReceivedAdapter(this, list1, this);	       
-	    //   listViewPaymentsReceived.setChoiceMode(ListView.CHOICE_MODE_NONE);
+	    ArrayList<String> list1 = new ArrayList<String>();   
+	    paymentsReceivedAdapter = new PaymentsReceivedAdapter(this, list1, this);	       
+	    listViewPaymentsReceived.setChoiceMode(ListView.CHOICE_MODE_NONE);
+	    listViewPaymentsReceived.setAdapter(paymentsReceivedAdapter);
 
 	}
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	  if (resultCode == RESULT_OK && requestCode == SALES_PAYMENTS_ACTIVITY_ID) {
-	    if (data.hasExtra("clientName")) {
-	    	clientName.setText(data.getStringExtra("clientName"));
+	    if (data.hasExtra("clientSelected")) {
+	    	clientSelected = (Client) data.getSerializableExtra("clientSelected");
+	    	clientName.setText(clientSelected.getName());
 	    }
 	  }
 	} 
         
     public void openCreditCardCheckoutActivity() {
  	   Intent intent = new Intent();
+ 	   Sale saleToSend = (Sale) extras.getSerializable("SaleData");
+ 	   saleToSend.setPaymentMethodList(paymentMethodList);
+ 	   if (clientSelected!=null) {
+ 		  saleToSend.setClient(clientSelected);
+ 	   }
+	   intent.putExtra("SaleData", saleToSend);
  	   intent.setClass(getBaseContext(), SalesCreditCardCheckoutActivity.class);
  	   startActivity(intent);
  	   this.overridePendingTransition(R.anim.left_mov, R.anim.right_mov);
@@ -143,7 +152,60 @@ public class SalesPaymentsActivity extends ListActivity {
 	}
 	
 	private void addPaymentToList() {
-		// TODO Auto-generated method stub	
+		ArrayList<String> list1 = new ArrayList<String>();
+		PaymentMethod paymentMethod = new PaymentMethod();
+		paymentMethod.setPaymentType(GENRES[listViewWayOfPayments.getCheckedItemPosition()]);
+		paymentMethod.setAmount(new BigDecimal(amountPaidEdit.getText().toString()));
+		paymentMethodList.add(paymentMethod);
+		for (int i=0 ; i<paymentMethodList.size() ; i++) {
+			list1.add(paymentMethodList.get(i).getPaymentType() + " - $" + paymentMethodList.get(i).getAmount().toString());
+		}
+		paymentsReceivedAdapter = new PaymentsReceivedAdapter(activity, list1, activity);
+		listViewPaymentsReceived.setAdapter(paymentsReceivedAdapter);
+		listViewWayOfPayments.clearChoices();
+		amountPaidEdit.setText("");
+		amountPaidEdit.setHint(activity.getString(R.string.sale_payments_amount_paid_hint));
 	}
 	
+
+	private void openNextActivity() {
+		for (int i=0 ; i<paymentMethodList.size() ; i++) {
+			PaymentMethod paymentMethod = paymentMethodList.get(i);
+			if (paymentMethod.getPaymentType().equals(GENRES[2])) {
+				openNfcActivity();
+				break;
+			} else if (paymentMethod.getPaymentType().equals(GENRES[1])) {
+				openCreditCardCheckoutActivity();
+				break;
+			} else if (paymentMethod.getPaymentType().equals(GENRES[4])) {
+				openMercadoPagoActivity();
+				break;
+			}	
+		}		
+	}
+	
+    public void openNfcActivity() {
+  	   Intent intent = new Intent();
+	   writeSaleDataIntoIntent(intent);
+  	   intent.setClass(getBaseContext(), NfcActivity.class);
+  	   startActivity(intent);
+  	   this.overridePendingTransition(R.anim.left_mov, R.anim.right_mov);
+     }
+
+    private void writeSaleDataIntoIntent(Intent intent) {
+    	Sale saleToSend = (Sale) extras.getSerializable("SaleData");
+    	if (clientSelected!=null) {
+    		saleToSend.setClient(clientSelected);
+    	}
+    	saleToSend.setPaymentMethodList(paymentMethodList);
+    	intent.putExtra("SaleData", saleToSend);
+    }
+    
+    public void openMercadoPagoActivity() {
+   	   Intent intent = new Intent();
+ 	   writeSaleDataIntoIntent(intent);
+   	   intent.setClass(getBaseContext(), MercadoPagoActivity.class);
+   	   startActivity(intent);
+   	   this.overridePendingTransition(R.anim.left_mov, R.anim.right_mov);
+      }
 }

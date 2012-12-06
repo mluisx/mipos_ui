@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">testLoginAndroid</string>    <string name="hello_world">Hola Mundo!</string>    <string name="menu_settings">Settings</string>    <string name="title_activity_main">Login Page</string>    <string name="login">Ingresar</string>    <string name="title_item_detail">Item Detail</string>    <string name="title_item_list">Items</string>    <string name="title_activity_menu_inicial">MenuInicial</string>    <string name="agregar_ventas">Agregar ventas</string>    <string name="view_sale_items">Visualizar ventas</string>    <string name="clientes">Clientes</string>    <string name="stock">Stock</string>    <string name="opciones">Opciones</string>    <string name="date">La fecha del día</string>    <string name="cash_open">Abrir caja</string>    <string name="change">Ingresar cambio del día</string>    <string name="cash_close">Cerrar caja</string>	<!-- clients_activities -->			  	<string name="clients_add_client_name_and_last_name">Nombre y Apellido</string>	<string name="clients_add_client_mail">E-Mail</string>	<string name="clients_add_client_cuit_number">C.U.I.T.</string>	<string name="clients_add_client_address">Dirección</string>	<string name="clients_add_client_phone">Número de Teléfono</string>	<string name="clients_add_client_extra_info">Información Extra</string>	<string name="clients_add_new_client">Agregar Cliente</string>		<string name="clients_add_client_picture">Sacar Foto</string>		<string name="clients_list_add_client">Agregar Nuevo Cliente</string>	  	<string name="clients_list_title">Lista de Clientes</string>		<string name="clients_history_title">Historial Cliente Número X</string>	<string name="clients_history_remove_client">Eliminar Cliente</string>		<string name="clients_extra_history_title">Datos Item X Cliente Y</string>	<string name="clients_extra_history_date_and_time">Fecha</string>	<string name="clients_extra_history_sale_number">Venta</string>	<string name="clients_extra_history_sale_description">Descripción de la Venta</string>	<string name="clients_extra_history_sale_total_price">Precio Final</string>	<string name="clients_extra_history_seller">Vendedor</string>	<string name="clients_extra_history_back">Volver al Historial</string>	<string name="clients_history_back">Volver al Listado de Clientes</string>
+    <string name="app_name">MiPos</string>    <string name="hello_world">Hola Mundo!</string>    <string name="menu_settings">Settings</string>    <string name="title_activity_main">Login Page</string>    <string name="login">Ingresar</string>    <string name="title_item_detail">Item Detail</string>    <string name="title_item_list">Items</string>    <string name="title_activity_menu_inicial">MenuInicial</string>    <string name="agregar_ventas">Agregar ventas</string>    <string name="view_sale_items">Visualizar ventas</string>    <string name="clientes">Clientes</string>    <string name="stock">Stock</string>    <string name="opciones">Opciones</string>    <string name="date">La fecha del día</string>    <string name="cash_open">Abrir caja</string>    <string name="change">Ingresar cambio del día</string>    <string name="cash_close">Cerrar caja</string>
+    <string name="statistics">Estadísticas</string>	<!-- clients_activities -->			  	<string name="clients_add_client_name_and_last_name">Nombre y Apellido</string>	<string name="clients_add_client_mail">E-Mail</string>	<string name="clients_add_client_cuit_number">C.U.I.T.</string>	<string name="clients_add_client_address">Dirección</string>	<string name="clients_add_client_phone">Número de Teléfono</string>	<string name="clients_add_client_extra_info">Información Extra</string>	<string name="clients_add_new_client">Agregar Cliente</string>		<string name="clients_add_client_picture">Sacar Foto</string>		<string name="clients_list_add_client">Agregar Nuevo Cliente</string>	  	<string name="clients_list_title">Lista de Clientes</string>		<string name="clients_history_title">Historial Cliente Número X</string>	<string name="clients_history_remove_client">Eliminar Cliente</string>		<string name="clients_extra_history_title">Datos Item X Cliente Y</string>	<string name="clients_extra_history_date_and_time">Fecha</string>	<string name="clients_extra_history_sale_number">Venta</string>	<string name="clients_extra_history_sale_description">Descripción de la Venta</string>	<string name="clients_extra_history_sale_total_price">Precio Final</string>	<string name="clients_extra_history_seller">Vendedor</string>	<string name="clients_extra_history_back">Volver al Historial</string>	<string name="clients_history_back">Volver al Listado de Clientes</string>
 	
     <!-- sales_activities -->
     <string name="product_code">Código</string>
@@ -18,8 +19,8 @@
 	
 	<string name="sales_credit_card_checkout_title">Datos Tarjeta de Crédito</string>
 	<string name="sales_credit_card_number">Número de Tarjeta</string>
-	<string name="sales_credit_card_holder_name">Nombre y Apellido</string>
-	<string name="sales_credit_card_expiracy_date">Fecha de Vencimiento</string>
+	<string name="sales_credit_card_holders_name">Nombre y Apellido</string>
+	<string name="sales_credit_card_expiration_date">Fecha de Vencimiento</string>
 	<string name="sales_credit_card_security_code">Código de Seguridad</string>
 	<string name="sales_begin_credit_card_checkout_process">Iniciar Transacción</string>
 	
@@ -93,4 +94,25 @@
     <string name="sale_payments_client_name">Cliente: Final</string>
     <string name="sale_payments_total_amount">Total de Venta $0.00</string>
         
+    <!-- signature_activity -->  
+    <string name="button_discard">Discard</string>
+    <string name="prompt_gesture_name">Name</string>
+    <string name="button_done">Done</string>
+    
+    <!-- sales_ticket_activity -->  
+    <string name="sales_ticket_send_ticket_to_email_button">Enviar ticket por E-mail</string>
+    <string name="sales_ticket_print_ticket_button">Visualizar Ticket (Imprimir)</string>
+    <string name="sales_ticket_no_printing_and_exit_button">No Imprimir Ticket y Finalizar Venta</string>
+    <string name="sales_ticket_title">La transacción fue exitosa - Ticket</string>
+    <string name="sales_ticket_email_hint">nombre@dirección</string>
+    
+    <!-- statistics_activity -->
+	<string name="add_values">Add values to the chart</string>    
+	<string name="x">X</string>    
+	<string name="y">Y</string>
+	<string name="new_series">New series</string>
+	
+	<!-- nfc_activity -->
+	<string name="nfc_end_sale_button">Finalizar Venta</string>
+	
 </resources>

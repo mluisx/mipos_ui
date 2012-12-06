@@ -29,12 +29,13 @@ public class MainMenuActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
         
-        Button button3 = (Button) findViewById(R.id.main_menu_cash_close);
+        Button cashCloseButton = (Button) findViewById(R.id.main_menu_cash_close);
         Button cashOpen = (Button) findViewById(R.id.main_menu_cash_open);
         Button clientsButton = (Button) findViewById(R.id.main_menu_clients);
         Button options = (Button) findViewById(R.id.main_menu_options);
         Button stockButton = (Button) findViewById(R.id.main_menu_stock);
-        Button button7 = (Button) findViewById(R.id.main_menu_view_sale_items);
+        Button viewSalesButton = (Button) findViewById(R.id.main_menu_view_sale_items);
+        Button statisticsButton = (Button) findViewById(R.id.main_menu_statistics);
         final Button mainMenuAddSaleButton = (Button) findViewById(R.id.main_menu_add_sale);
         
         mainMenuAddSaleButton.setOnClickListener(new OnClickListener() {
@@ -64,6 +65,24 @@ public class MainMenuActivity extends Activity {
         options.setOnClickListener(new OnClickListener() {
         	public void onClick(View v) {
         		openOptionsActivity();
+       	    }
+        });
+        
+        statisticsButton.setOnClickListener(new OnClickListener() {
+        	public void onClick(View v) {
+        		openStatisticsActivity();
+       	    }
+        });
+        
+        viewSalesButton.setOnClickListener(new OnClickListener() {
+        	public void onClick(View v) {
+        		openViewSalesActivity();
+       	    }
+        });
+        
+        cashCloseButton.setOnClickListener(new OnClickListener() {
+        	public void onClick(View v) {
+        		openCashCloseActivity();
        	    }
         });
         
@@ -105,6 +124,27 @@ public class MainMenuActivity extends Activity {
 			optionsIntent.setClass(getBaseContext(), OptionsActivity.class);
 		}
 		startActivityForResult(optionsIntent, OPTIONS_ACTIVITY_ID);
+		this.overridePendingTransition(R.anim.left_mov, R.anim.right_mov);
+	}
+	
+	public void openStatisticsActivity() {
+		Intent intent = new Intent();
+		intent.setClass(getBaseContext(), StatisticsActivity.class);
+		startActivity(intent);
+		this.overridePendingTransition(R.anim.left_mov, R.anim.right_mov);
+	}
+	
+	public void openViewSalesActivity() {
+		Intent intent = new Intent();
+		intent.setClass(getBaseContext(), ViewSalesActivity.class);
+		startActivity(intent);
+		this.overridePendingTransition(R.anim.left_mov, R.anim.right_mov);
+	}
+	
+	public void openCashCloseActivity() {
+		Intent intent = new Intent();
+		intent.setClass(getBaseContext(), CashCloseActivity.class);
+		startActivity(intent);
 		this.overridePendingTransition(R.anim.left_mov, R.anim.right_mov);
 	}
 	   

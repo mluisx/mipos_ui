@@ -74,7 +74,7 @@ public class ClientsListActivity extends ListActivity {
 	public void finish(Client clientSelected) {
 	  // Prepare data intent 
 	  Intent data = new Intent();
-	  data.putExtra("clientName", clientSelected.getName());
+	  data.putExtra("clientSelected", clientSelected);
 	  setResult(RESULT_OK, data);
 	  finish();
 	} 

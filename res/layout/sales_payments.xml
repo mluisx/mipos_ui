@@ -47,7 +47,7 @@
         android:text="@string/sale_payments_amount_paid" />
 
     <ListView
-        android:id="@+id/sale_payments_listView2"
+        android:id="@+id/sale_payments_received_payment_listView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.3"

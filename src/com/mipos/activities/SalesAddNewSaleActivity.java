@@ -8,10 +8,11 @@ import java.util.List;
 import java.util.Map;
 
 import com.mipos.adapters.*;
+import com.mipos.database.MySQLiteHelper;
 import com.mipos.database.ProductsDataSource;
 import com.mipos.pojos.ProductForSale;
+import com.mipos.pojos.Sale;
 import com.mipos.pojos.StockNewProduct;
-import com.mipos.utils.TransferBigDecimalObject;
 
 import android.app.Activity;
 import android.app.ListActivity;
@@ -41,11 +42,11 @@ public class SalesAddNewSaleActivity extends ListActivity {
 	List<ProductForSale> productForSaleList;
 	ScrollView cartItems;
 	int quantity;
-	BigDecimal totalCartPrice;
 	CartItemsAdapter adapter;
 	Activity activity;
 	BigDecimal productPrice;
 	ProductsDataSource datasource;
+	BigDecimal totalCartAmount;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,8 +56,6 @@ public class SalesAddNewSaleActivity extends ListActivity {
         datasource = new ProductsDataSource(this);
         datasource.open();
               
-//      Product product = datasource.createProduct("P1");
-//      product = datasource.createProduct("P22");
 //        StockNewProduct product = new StockNewProduct();
 //        product.setCode("P1");
 //        product.setDescription("Cartera de Cuero de Milano");
@@ -73,6 +72,16 @@ public class SalesAddNewSaleActivity extends ListActivity {
 //        product.setCategory("Billeteras");
 //
 //        datasource.createProduct(product);
+        
+    	int currentStock;
+        currentStock = datasource.selectProductQuantity("P1");
+        Log.i("SalesAddNewSaleActivity", "current P1 Stock: " + currentStock);
+        MySQLiteHelper.DBackup();
+//      currentStock--;
+//      datasource.updateProduct("P1", currentStock);
+//      currentStock = datasource.selectProductQuantity("P1");
+//      Log.i("SalesAddNewSaleActivity", "new P1 Stock: " + currentStock);
+        OpenObjectFromSQLite();
      
         List<StockNewProduct> values2 = datasource.getAllProducts();
         Log.i("SalesAddNewSaleActivity", "MyClass.getView() - get item values from sqlite " + values2.toString());        
@@ -88,18 +97,18 @@ public class SalesAddNewSaleActivity extends ListActivity {
         productQuantityTextView = (TextView) findViewById(R.id.sales_add_new_sale_product_quantity_textView);
         finalCartPriceTextView = (TextView) findViewById(R.id.sales_add_new_sale_textView_final_price);
         quantity = 0;
-        totalCartPrice = new BigDecimal("0");
         productForSaleList = new ArrayList<ProductForSale>();
         final ListView listView = getListView();
         activity = this;
+        totalCartAmount = new BigDecimal("0");
         
-        mp = new HashMap<String, String[]>();
-
-        // adding or set elements in Map by put method key and value pair
-        mp.put("P1", new String[]{"Cartera de Cuero de Milano","345"});
-        mp.put("P22", new String[]{"Billetera Leopardo Color Camel","388"});
-        mp.put("P333", new String[]{"Zapato Doble Taco Alto Negro","450"});
-        mp.put("P4444", new String[]{"Campera Oveja Invierno 2012","550"});
+//        mp = new HashMap<String, String[]>();
+//
+//        // adding or set elements in Map by put method key and value pair
+//        mp.put("P1", new String[]{"Cartera de Cuero de Milano","345"});
+//        mp.put("P22", new String[]{"Billetera Leopardo Color Camel","388"});
+//        mp.put("P333", new String[]{"Zapato Doble Taco Alto Negro","450"});
+//        mp.put("P4444", new String[]{"Campera Oveja Invierno 2012","550"});
                 
         addSaleButtonQuantityMore.setOnClickListener(new OnClickListener() {
 			
@@ -199,34 +208,42 @@ public class SalesAddNewSaleActivity extends ListActivity {
 
  	   });
  	   
-       addSaleButtonAdd.setOnClickListener(new OnClickListener() {
-			
-   		public void onClick(View v) {
-   			ProductForSale productForSale = new ProductForSale();
-   			productForSale.setCode(productCodeEditText.getText().toString());
-   			productForSale.setQuantity(quantity);
-   			productForSale.setPrice(productPrice);
-   			productForSaleList.add(productForSale);
-   			totalCartPrice = totalCartPrice.add(productPrice);
-   			ArrayList<String> list1 = new ArrayList<String>();
-   			for (int i=0 ; i<productForSaleList.size() ; i++) {
-   				list1.add(productForSaleList.get(i).getCode() + " - " + productForSaleList.get(i).getPrice().toString() +
-   						" - "+ productForSaleList.get(i).getQuantity());
-   			}
-   	        adapter = new CartItemsAdapter(activity, list1, activity);
-   	 	    listView.setAdapter(adapter);
-   	 	    finalCartPriceTextView.setText((CharSequence) totalCartPrice.toString());
-   		}});
+ 	   addSaleButtonAdd.setOnClickListener(new OnClickListener() {
+
+ 		   public void onClick(View v) {
+ 			   ProductForSale productForSale = new ProductForSale();
+ 			   productForSale.setCode(productCodeEditText.getText().toString());
+ 			   productForSale.setQuantity(quantity);
+ 			   productForSale.setPrice(productPrice);
+ 			   productForSaleList.add(productForSale);
+ 			   totalCartAmount = totalCartAmount.add(productPrice);
+ 			   ArrayList<String> list1 = new ArrayList<String>();
+ 			   for (int i=0 ; i<productForSaleList.size() ; i++) {
+ 				   list1.add(productForSaleList.get(i).getCode() + " - " + productForSaleList.get(i).getPrice().toString() +
+ 						   " - "+ productForSaleList.get(i).getQuantity());
+ 			   }
+ 			   adapter = new CartItemsAdapter(activity, list1, activity);
+ 			   listView.setAdapter(adapter);
+ 			   finalCartPriceTextView.setText((CharSequence) totalCartAmount.toString());
+ 		   }});
      
     }    
 
-	public void openPaymentsActivity() {
-		   Intent intent = new Intent();
-		   intent.setClass(getBaseContext(), SalesPaymentsActivity.class);
-		   TransferBigDecimalObject objectReadyToTransfer = new TransferBigDecimalObject(totalCartPrice);
-		   intent.putExtra("TotalAmount", objectReadyToTransfer);
-		   startActivity(intent);
-		   this.overridePendingTransition(R.anim.left_mov, R.anim.right_mov);
+    public void openPaymentsActivity() {
+    	Intent intent = new Intent();
+    	intent.setClass(getBaseContext(), SalesPaymentsActivity.class);
+    	//		   TransferBigDecimalObject objectReadyToTransfer = new TransferBigDecimalObject(sale);
+    	Sale saleToSend = new Sale();
+    	saleToSend.setProductForSaleList(productForSaleList);
+    	saleToSend.setTotalCartAmount(totalCartAmount);
+    	intent.putExtra("SaleData", saleToSend);
+    	startActivity(intent);
+    	this.overridePendingTransition(R.anim.left_mov, R.anim.right_mov);
+    }
+	
+	public void OpenObjectFromSQLite() {
+        Sale sale = datasource.selectTaskToSync();
+        Log.i("SalesAddNewSaleActivity", "Object from SQlite Value: " + sale.getTotalCartAmount());
 	}
 
 }

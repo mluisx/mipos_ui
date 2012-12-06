@@ -5,7 +5,7 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/cash_close_date_textView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -13,7 +13,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/cash_close_text_textView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/cash_close_total"
@@ -21,7 +21,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/cash_close_total_cash_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -32,7 +32,7 @@
         </EditText>
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/cash_close_total_credit_card_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -40,7 +40,7 @@
             android:hint="@string/cash_close_credit_card_amount" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/cash_close_total_other_payments_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -48,7 +48,7 @@
             android:hint="@string/cash_close_other_payment_methods_amount" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/cash_close_total_amount_textView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/cash_close_amounts_total"
@@ -56,7 +56,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/cash_close_action_button"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/cash_close_action" />
