@@ -53,4 +53,5 @@ public class StockNewProduct {
 	public void setPictureData(byte[] pictureData) {
 		this.pictureData = pictureData;
 	}
+
 }

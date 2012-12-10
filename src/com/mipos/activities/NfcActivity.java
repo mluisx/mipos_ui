@@ -8,6 +8,7 @@ import java.util.Locale;
 
 import com.mipos.asyncs.CashOpenAsync;
 import com.mipos.pojos.Cash;
+import com.mipos.pojos.Client;
 import com.mipos.pojos.NFCData;
 import com.mipos.pojos.PaymentMethod;
 import com.mipos.pojos.Sale;
@@ -92,7 +93,7 @@ public class NfcActivity extends Activity {
 		endSaleButton.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
-				openTicketActivity();
+				finishActivity();
 			}			
 		});
 
@@ -252,17 +253,16 @@ public class NfcActivity extends Activity {
 		if (mAdapter != null) mAdapter.disableForegroundDispatch(this);
 	}
 	
-	public void openTicketActivity() {
+	public void finishActivity() {
 		Intent intent = new Intent();
 		Sale saleToSend = null;
-		intent.setClass(getBaseContext(), SalesTicketActivity.class);
 		if (extras != null) {
 			saleToSend = (Sale) extras.getSerializable("SaleData");
 			saleToSend.setNfcData(nfcData);
 		}
 		intent.putExtra("SaleData", saleToSend);
-		startActivity(intent);
-		this.overridePendingTransition(R.anim.left_mov, R.anim.right_mov);
+		setResult(RESULT_OK, intent);
+		finish();
 	}
 	
 }

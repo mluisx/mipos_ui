@@ -71,8 +71,21 @@
         android:layout_height="wrap_content"
         android:text="@string/sale_payments_add_way_of_payment" />
 
+    <Button
+        android:id="@+id/sale_payments_delete_payment_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sale_payments_delete_payment" />
+    
+    <TextView
+        android:id="@+id/sale_payments_seller_textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/sale_payments_seller" />
+    
     <ListView
-        android:id="@+id/sale_payments_listView3"
+        android:id="@+id/sale_payments_seller_listView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.3"

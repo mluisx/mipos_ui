@@ -112,9 +112,7 @@ public class SalesSignatureActivity extends Activity {
 		}
 		catch(Exception e)
 		{}
-		openTicketActivity(bitmap);
-		finish();
-
+		finishActivity(bitmap);
 	}
 
 	@SuppressWarnings({"UnusedDeclaration"})
@@ -143,17 +141,16 @@ public class SalesSignatureActivity extends Activity {
 		public void onGestureCancelled(GestureOverlayView overlay, MotionEvent event) { }
 	}
 	
-	public void openTicketActivity(Bitmap bitmap) {
+	public void finishActivity(Bitmap bitmap) {
 		Intent intent = new Intent();
 		Sale saleToSend = null;
-		intent.setClass(getBaseContext(), SalesTicketActivity.class);
 		if (extras != null) {
 			saleToSend = (Sale) extras.getSerializable("SaleData");
 			saleToSend.setSignature(new SerializedBitmap(bitmap));
 		}
 		intent.putExtra("SaleData", saleToSend);
-		startActivity(intent);
-		this.overridePendingTransition(R.anim.left_mov, R.anim.right_mov);
+		setResult(RESULT_OK, intent);
+		finish();
 	}
 
 }

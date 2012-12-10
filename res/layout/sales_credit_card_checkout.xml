@@ -49,11 +49,48 @@
         android:inputType="date"
         android:hint="@string/sales_credit_card_security_code" />
 
+    <TextView
+        android:id="@+id/sales_credit_card_checkout_reader_textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.10"
+        android:gravity="center"
+        android:text="Lector: Desconectado"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/sales_credit_card_checkout_dataIcon"
+		android:layout_gravity="right"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:src="@drawable/idle_icon"/>
+
+	<TextView 
+	    android:id="@+id/sales_credit_card_checkout_trackContent"
+    	android:layout_width="fill_parent" 
+    	android:layout_height="wrap_content"
+    	android:textSize="30sp" 
+    	android:text="" />    
+
+	<TextView 
+	    android:id="@+id/sales_credit_card_checkout_issuerContent"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:textSize="30sp"
+    	android:text="" />
+
+	<ImageView 
+	    android:id="@+id/sales_credit_card_checkout_issuerLogo"
+    	android:layout_gravity="center_horizontal"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:src="@drawable/no_logo"/>	
+	
     <Button
         android:id="@+id/sales_begin_credit_card_checkout_process_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/sales_begin_credit_card_checkout_process" />
+        android:layout_weight="0.40"
+        android:text="@string/sales_credit_card_checkout_begin_credit_card_checkout_process" />
     
 </LinearLayout>

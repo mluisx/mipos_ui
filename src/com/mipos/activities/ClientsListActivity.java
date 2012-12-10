@@ -1,10 +1,12 @@
 package com.mipos.activities;
 
+import java.util.ArrayList;
+
 import com.mipos.adapters.ClientsListItemsAdapter;
 import com.mipos.asyncs.ClientsSearchAsync;
+import com.mipos.database.ClientsDataSource;
 import com.mipos.pojos.Client;
 import com.mipos.pojos.ClientsList;
-import com.mipos.utils.TransferBigDecimalObject;
 
 import android.app.Activity;
 import android.app.ListActivity;
@@ -24,8 +26,9 @@ public class ClientsListActivity extends ListActivity {
 	ClientsListItemsAdapter adapter;
 	ListView listView;
 	Activity activity;
-	ClientsList clientsList;
+	ClientsList clientsList = new ClientsList();
 	String parentActivity;
+	ClientsDataSource clientsDataSource;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -67,8 +70,12 @@ public class ClientsListActivity extends ListActivity {
 			}
 		});	
 		
-		ClientsSearchAsync clientsSearchAsync = new ClientsSearchAsync(this);
-		clientsSearchAsync.execute();
+//		ClientsSearchAsync clientsSearchAsync = new ClientsSearchAsync(this);
+//		clientsSearchAsync.execute();
+        clientsDataSource = new ClientsDataSource(this);
+        clientsDataSource.open();
+        clientsList.setClientsList((ArrayList<Client>) clientsDataSource.getAllClients());
+        loadClientsList(clientsList);
 	}
 
 	public void finish(Client clientSelected) {

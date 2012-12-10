@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 public class Client implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	int id;
+	long id;
 	String name;
 	BigDecimal balance;
 	
@@ -23,16 +23,16 @@ public class Client implements Serializable {
 		this.balance = balance;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	
 	@Override
 	public String toString() {
-		return getId() + " - " + getName() + " - Balance $" + getBalance().toString();	
+		return getId() + " - " + getName();// +  " - Balance $" + getBalance().toString();	
 	}
 	
 }
